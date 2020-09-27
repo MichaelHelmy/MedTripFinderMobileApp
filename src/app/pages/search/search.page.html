@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            {{'search' | translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <form>
+        <ion-list>
+            <ion-item lines="none">
+                <ion-label position="stacked">{{'name' | translate}}</ion-label>
+                <ion-input type="text" placeholder="{{'name' | translate}}"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-label position="stacked">{{'department' | translate}}</ion-label>
+                <ion-select name="dept" okText="{{'ok' | translate}}" cancelText="{{'cancle' | translate}}">
+                    <ion-select-option *ngFor="let department of departments" selected>{{department['option_' + global.lang ]}} </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-label position="stacked">{{'location' | translate}}</ion-label>
+                <div class="locate">
+                    <ion-icon name="pin"></ion-icon>
+                    <ion-select name="location" okText="{{'ok' | translate}}" cancelText="{{'cancle' | translate}}">
+                        <ion-select-option *ngFor="let location of locations" selected>{{location['option_' + global.lang ]}}</ion-select-option>
+                    </ion-select>
+                </div>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-label position="stacked">{{'sortBy' | translate}}</ion-label>
+                <ion-select name="sort" okText="{{'ok' | translate}}" cancelText="{{'cancle' | translate}}">
+                    <ion-select-option *ngFor="let sort of sorts" selected>{{sort['option_' + global.lang ]}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+        <ion-button expand="block">{{'searchNow' | translate}}</ion-button>
+    </form>
+</ion-content>

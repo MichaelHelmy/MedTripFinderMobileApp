@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            {{'account' | translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <div class="top-side account">
+        <img src="{{img}}">
+        <ion-button *ngIf="form_disabled == true" (click)="update()">
+            <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button class="camera" *ngIf="form_disabled == false" (click)="selectImage()">
+            <ion-icon name="camera"></ion-icon>
+        </ion-button>
+        <div class="contian-image">
+            <p>Justin Timberlake</p>
+            <span>Justin Timberlake@yahoo.com</span>
+        </div>
+    </div>
+    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+        <div [ngClass]="{'active' : form_disabled == false}">
+            <!-- phone -->
+            <ion-item lines="none">
+                <ion-icon name="call" slot="start"></ion-icon>
+                <ion-input type="tel" maxlength="10" [disabled]="form_disabled" formControlName="phone" placeholder="{{'phone' | translate}}" name="userphone" [(ngModel)]="person_info.phone"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of global.validation_messages.phone">
+                    <div class="error-message" *ngIf="validations_form.get('phone').hasError(validation.type) && (validations_form.get('phone').dirty || validations_form.get('phone').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        {{ validation['message_' + global.lang] }}
+                    </div>
+                </ng-container>
+            </div>
+            <!-- password -->
+            <ion-item lines="none">
+                <ion-icon name="lock" slot="start"></ion-icon>
+                <ion-input type="password" placeholder="{{'password' | translate}}" [disabled]="form_disabled" formControlName="password" name="userPassword" [(ngModel)]="person_info.password"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of global.validation_messages.password">
+                    <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        {{ validation['message_' + global.lang] }}
+                    </div>
+                </ng-container>
+            </div>
+            <!-- Location -->
+            <ion-item lines="none">
+                <ion-icon name="pin" slot="start"></ion-icon>
+                <ion-input type="text" [disabled]="form_disabled" formControlName="address" placeholder="{{'address' | translate}}" name="userAddress" [(ngModel)]="person_info.address"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of global.validation_messages.address">
+                    <div class="error-message" *ngIf="validations_form.get('address').hasError(validation.type) && (validations_form.get('address').dirty || validations_form.get('address').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        {{ validation['message_' + global.lang] }}
+                    </div>
+                </ng-container>
+            </div>
+            <ion-button type="submit" strong="true" routerDirection="root" Expand="block" *ngIf="form_disabled == false" [disabled]="!validations_form.valid">{{'save' | translate}}
+            </ion-button>
+        </div>
+    </form>
+</ion-content>

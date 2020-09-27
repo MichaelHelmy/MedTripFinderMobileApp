@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <div class="verification-data">
+        <img src="./assets/img/verification-code.png">
+        <p>{{'verificationCode' | translate}}</p>
+        <span>{{'Pleasetypetheverificationsentto' | translate}} john_smith@yahoo.com</span>
+    </div>
+    <form class="sign">
+        <div class="verification">
+            <ion-item color="transparent" lines="none">
+                <ion-input type="tel" maxlength="1"></ion-input>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+                <ion-input type="tel" maxlength="1"></ion-input>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+                <ion-input type="tel" maxlength="1"></ion-input>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+                <ion-input type="tel" maxlength="1"></ion-input>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+                <ion-input type="tel" maxlength="1"></ion-input>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+                <ion-input type="tel" maxlength="1"></ion-input>
+            </ion-item>
+        </div>
+        <ion-button expand="block" color="tertiary" strong="true" routerLink="/change-password">{{'verify' | translate}}</ion-button>
+        <span>{{'Ifyoudidn’treceiveacode!' | translate}}
+                <ion-text color="tertiary">{{'resend' | translate}}</ion-text>
+            </span>
+    </form>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{'Notification' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <ion-item lines="none" *ngFor="let notificat of notifications">
+        <ion-label>
+            <p>{{notificat['name_' + global.lang ]}} <span>{{notificat['title_' + global.lang ]}}</span></p>
+            <p>{{notificat['paragraph_' + global.lang ]}}</p>
+            <span>30/10 <ion-text color="tertiary">{{'from' | translate}}</ion-text> 07:00 Am <ion-text color="tertiary">{{'to' | translate}} </ion-text>07:00
+            Am</span>
+        </ion-label>
+    </ion-item>
+</ion-content>

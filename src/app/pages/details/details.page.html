@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <img src="./assets/img/details.png">
+    <div class="headerDetails">
+        <ion-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-button>
+        <img src="./assets/img/doctor1.png">
+
+        <ion-button color="tertiary" routerLink="/map">
+            <ion-icon name="map"></ion-icon>
+        </ion-button>
+    </div>
+    <div class="details" *ngFor="let detail of Details">
+        <h3>{{detail['name_' + global.lang ]}}</h3>
+        <span>{{detail['title_' + global.lang ]}}</span>
+        <p>{{detail['paragraph_' + global.lang ]}} </p>
+        <div class="call">
+            <ion-icon name="call"></ion-icon><span>098755482654</span>
+        </div>
+        <div class="times">
+            <ion-item lines="none">
+                <ion-select okText="{{'ok' | translate}}" cancelText="{{'cancle' | translate}}">
+                    <ion-select-option selected>{{'Saturday' | translate}}</ion-select-option>
+                    <ion-select-option *ngFor="let day of Days">{{day['day_' + global.lang ]}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <span>9:00 Am - 7:00 Pm</span>
+        </div>
+        <ion-button expand="block"> {{'BookAppointment' | translate}}</ion-button>
+        <div class="rate">
+            <p>{{'comment' | translate}}</p>
+            <ion-item lines="none" *ngFor="let rate of Ratting">
+                <ion-avatar>
+                    <img src="{{rate.ImgUrl}}">
+                </ion-avatar>
+                <ion-label>
+                    <h3>{{rate.name}}
+                        <ion-text>{{rate['time_' + global.lang ]}}</ion-text>
+                    </h3>
+                    <div class="star-details">
+                        <rating [rate]="4" readonly="true" size="5" (ngModelChange)="onRateChange($event)" class="star">
+                        </rating>
+                        <ion-text>4.7</ion-text>
+                    </div>
+                    <p>{{rate['paragraph_' + global.lang ]}}</p>
+                </ion-label>
+            </ion-item>
+
+        </div>
+        <ion-button expand="block" (click)="rateDoctor()">{{'RateThisDoctor' | translate}}</ion-button>
+    </div>
+</ion-content>

@@ -1,0 +1,81 @@
+{
+    "email": "البريد الالكترونى",
+    "password": "كلمه المرور",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "forgetPassword?": "هل نسيت كلمه المرور",
+    "skip": "تخطى",
+    "login": "دخول",
+    "noAccountYet?": "لا يوجد حساب بعد؟",
+    "CreateOne": "اصنع واحدا",
+    "SignInWith": "تسجيل الدخول ب",
+
+    "fristName": "الاسم الاول",
+    "lastName": "الاسم الاخير",
+    "createAccount": "اصنع حساب",
+
+    "forgetPassword": "هل نسيت كلمه المرور",
+    "PleaseEnterYourEmailRegisterWithUs": "من فضلك أدخل بريدك الإلكتروني سجل معنا",
+    "send": "ارسال",
+
+    "verificationCode": "شيفرة التأكيد",
+    "Pleasetypetheverificationsentto": "الرجاء كتابة التحقق المرسلة إلى",
+    "verify": "التحقق",
+    "Ifyoudidn’treceiveacode!": "إذا لم تتلقى رمزًا! ",
+    "resend": "اعاده ارسال",
+
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "PleaseenteryourEmail": "الرجاء إدخال بريدك الإلكتروني المسجل معنا",
+    "confirmPassword": "تأكيد كلمه المرور",
+    "save": "حفظ",
+
+    "FindaDoctor": "اعثر على طبيب",
+
+    "Saturday": "السبت",
+    "BookAppointment": " موعد الكتاب",
+    "comment": "تقييم",
+    "RateThisDoctor": " قيم هذا الطبيب",
+
+    "FollowUsOn": "اتبعنا على",
+    "logOut": "خروج",
+
+    "saved": "تم الحفظ",
+
+    "MyRequests": "طلباتى",
+    "from": "من",
+    "to": "الى",
+
+    "setting": "الاعدادات",
+    "languages": "اللغات",
+    "storyTextSize": "حجم نص القصه",
+    "normal": "عادى",
+    "big": "كبير",
+    "application": "التطبيق",
+    "sendNotifacation": "ارسال الاشعارات",
+    "autoSync": "المزامنه التلقائيه",
+    "vibrateApp": "تطبيق يهتز",
+    "vibrate": "يهتز",
+    "connectWithFacebook": "تواصل مع الفيسبوك",
+    "connectWithTwitter": "تواصل مع التويتر",
+    "ok": "تم",
+    "cancle": "الغاء",
+
+    "account": "الحساب",
+    "empty": "فارغ",
+
+    "btnText": "En",
+
+    "Notification": "الاشعارات",
+    "search": "بحث",
+    "name": "الاسم",
+    "department": "القسم",
+    "location": "الموقع",
+    "sortBy": "صنف حسب",
+    "searchNow": "ابحث الان",
+    "unsave": "الغاء الحفظ",
+    "remove": "حذف",
+
+    "rateThisDoctor": "معدل هذا الطبيب",
+    "Enteranynoteshere": "معدل هذا الطيب..."
+
+}

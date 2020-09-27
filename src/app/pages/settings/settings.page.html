@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{'setting' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <ion-list>
+        <ion-list-header>
+            <ion-label>{{'languages' | translate}}</ion-label>
+        </ion-list-header>
+        <ion-item lines="none">
+            <ion-label>{{'languages' | translate}}</ion-label>
+            <ion-select name="mylang" okText="{{'ok' | translate}}" cancelText="{{'cancle' | translate}}" [(ngModel)]="global.lang" (ionChange)="this.global.change_lang(this.global.lang)">
+                <ion-select-option value="en" selected>English</ion-select-option>
+                <ion-select-option value="ar">اللغه العربيه</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            <ion-label>{{'storyTextSize' | translate}}</ion-label>
+        </ion-list-header>
+        <ion-radio-group>
+            <ion-item lines="none">
+                <ion-label>{{'normal' | translate}}</ion-label>
+                <ion-radio slot="end" value="Normal" (click)="normal()" checked></ion-radio>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label>{{'big' | translate}}</ion-label>
+                <ion-radio slot="end" value="big" (click)="larg()"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            <ion-label>{{'application' | translate}}</ion-label>
+        </ion-list-header>
+        <ion-item lines="none">
+            <ion-label>{{'sendNotifacation' | translate}}</ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-label>{{'autoSync' | translate}}</ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-label>{{'vibrateApp' | translate}}</ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <ion-item lines="none">
+        <ion-label>{{'vibrate' | translate}}</ion-label>
+        <ion-toggle color="primary"></ion-toggle>
+    </ion-item>
+    <ion-button class="facebook" expand="block" strong="true">
+        <ion-icon name="logo-facebook"></ion-icon> {{'connectWithFacebook' | translate}}
+    </ion-button>
+    <ion-button class="twitter" expand="block" strong="true">
+        <ion-icon name="logo-twitter"></ion-icon> {{'connectWithTwitter' | translate}}
+    </ion-button>
+</ion-content>

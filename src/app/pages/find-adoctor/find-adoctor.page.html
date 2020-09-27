@@ -1,0 +1,120 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            {{'FindaDoctor' | translate}}
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/search">
+                <ion-icon name="search" slot="icon-only"></ion-icon>
+            </ion-button>
+            <ion-toggle class="home_toggle" [(ngModel)]="toggle_var"></ion-toggle>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false" [ngSwitch]="toggle_var">
+
+    <div class="map" #map id="map" [ngClass]="{'active' : toggle_var == false }"></div>
+    <div class="scroll" *ngSwitchCase="false">
+        <ion-item class="dataOfDoctor" lines="none" detail='false' routerLink="/details" *ngFor="let doctor of Doctors">
+            <ion-label>
+                <img src="{{doctor.imgUrl}}">
+                <p>{{doctor['name_' + global.lang ]}}</p>
+                <span>{{doctor['title_' + global.lang ]}}</span>
+                <div class="star-doctor">
+                    <rating [rate]="4" readonly="true" size="5" (ngModelChange)="onRateChange($event)" class="star">
+                    </rating>
+                    <ion-text color="light">4.7</ion-text>
+                </div>
+                <div class="location">
+                    <ion-icon name="pin"></ion-icon>
+                    <span>{{doctor['address_' + global.lang ]}}</span>
+                </div>
+                <div class="last-section">
+                    <div class="save">
+                        <ion-button *ngIf="doctor.show != false" (click)="show_save(doctor)">{{'save' | translate}}</ion-button>
+                        <ion-button *ngIf="doctor.show == false" (click)="show_save(doctor)">{{'unsave' | translate}}</ion-button>
+                    </div>
+                    <!-- <div class="save">
+                        <ion-icon name="star" (click)="like(doctor)" [ngClass]="{'active' : doctor.like==true}">
+                        </ion-icon>
+                    </div> -->
+                    <div class="fab-style">
+                        <ion-fab horizontal="end" slot="fixed" (click)="stop_prop()" edge>
+                            <ion-fab-button>
+                                <ion-icon name="share"></ion-icon>
+                            </ion-fab-button>
+                            <ion-fab-list side="top">
+                                <ion-fab-button>
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </ion-fab-button>
+                                <ion-fab-button>
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </ion-fab-button>
+                                <ion-fab-button>
+                                    <ion-icon name="logo-googleplus"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab-list>
+                        </ion-fab>
+                    </div>
+                </div>
+            </ion-label>
+        </ion-item>
+    </div>
+
+    <ion-list class="list-doctor" *ngSwitchCase="true">
+        <ion-item lines="none" detail='false' routerLink="/details" *ngFor="let save of saves">
+            <ion-avatar slot="start">
+                <img src="{{save.imgUrl}}">
+                <div class="saved">
+                    <rating [rate]="4" readonly="true" size="5" (ngModelChange)="onRateChange($event)" class="star">
+                    </rating>
+                </div>
+            </ion-avatar>
+            <ion-label>
+                <p>{{save['name_' + global.lang ]}}</p>
+                <span>{{save['title_' + global.lang ]}}</span>
+                <div class="location">
+                    <ion-icon name="pin"></ion-icon>
+                    <span>{{save['address_' + global.lang ]}}</span>
+                </div>
+                <div class="last-section">
+                    <div class="save" (click)="stop_prop()">
+                        <ion-button *ngIf="save.show != false" (click)="show_save(save)">{{'save' | translate}}</ion-button>
+                        <ion-button *ngIf="save.show == false" (click)="show_save(save)">{{'unsave' | translate}}</ion-button>
+                    </div>
+                    <!-- <div class="save">
+                                <ion-icon name="star" (click)="like(save)" [ngClass]="{'active' : save.like==true}">
+                                </ion-icon>
+                            </div> -->
+                    <div class="fab-style" (click)="stop_prop()">
+                        <ion-fab horizontal="end" slot="fixed" edge>
+                            <ion-fab-button>
+                                <ion-icon name="share"></ion-icon>
+                            </ion-fab-button>
+                            <ion-fab-list side="start">
+                                <ion-fab-button>
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </ion-fab-button>
+                                <ion-fab-button>
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </ion-fab-button>
+                                <ion-fab-button>
+                                    <ion-icon name="logo-googleplus"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab-list>
+                        </ion-fab>
+                    </div>
+                </div>
+            </ion-label>
+        </ion-item>
+        <div class="empty" *ngIf="saves.length == 0">
+            <ion-text>{{'empty' | translate}}</ion-text>
+            <ion-icon name="sad"></ion-icon>
+        </div>
+    </ion-list>
+</ion-content>

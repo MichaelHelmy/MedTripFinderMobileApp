@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            {{'saved' | translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <ion-list class="list-doctor">
+        <ion-item lines="none" *ngFor="let save of saves">
+            <ion-avatar slot="start">
+                <img src="{{save.imgUrl}}">
+                <div class="saved">
+                    <rating [(ngModel)]="rate" readonly="true" size="5" (ngModelChange)="onModelChange($event)" class="star">
+                    </rating>
+                </div>
+            </ion-avatar>
+            <ion-label>
+                <p>{{save['name_' + global.lang ]}}</p>
+                <span>{{save['title_' + global.lang ]}}</span>
+                <div class="location">
+                    <ion-icon name="pin"></ion-icon>
+                    <span>{{save['address_' + global.lang ]}}</span>
+                </div>
+                <div class="last-section">
+                    <div class="save">
+                        <ion-button (click)="remove(save)">{{'remove' | translate}}</ion-button>
+                    </div>
+                    <!-- <div class="save">
+                    <ion-icon name="star" (click)="like(save)" [ngClass]="{'active' : save.like==true}">
+                    </ion-icon>
+                </div> -->
+                    <div class="fab-style">
+                        <ion-fab horizontal="end" slot="fixed" edge>
+                            <ion-fab-button>
+                                <ion-icon name="share"></ion-icon>
+                            </ion-fab-button>
+                            <ion-fab-list side="start">
+                                <ion-fab-button>
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </ion-fab-button>
+                                <ion-fab-button>
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </ion-fab-button>
+                                <ion-fab-button>
+                                    <ion-icon name="logo-googleplus"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab-list>
+                        </ion-fab>
+                    </div>
+                </div>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <div class="empty" *ngIf="saves.length == 0">
+        <ion-text>{{'empty' | translate}}</ion-text>
+        <ion-icon name="sad"></ion-icon>
+    </div>
+</ion-content>

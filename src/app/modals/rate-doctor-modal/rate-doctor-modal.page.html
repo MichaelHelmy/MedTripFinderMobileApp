@@ -1,0 +1,10 @@
+<ion-content forceOverscroll="false">
+    <!-- <ion-button fill="clear" (click)="close()">
+        <ion-icon name="close"></ion-icon>
+    </ion-button> -->
+    <p>{{'rateThisDoctor' | translate}}</p>
+    <rating [(ngModel)]="rate" readonly="false" size="5" (ngModelChange)="onRateChange($event)" class="star rateDoctor">
+    </rating>
+    <ion-textarea autoGrow="true" rows="2" cols="5" placeholder="{{'Enteranynoteshere' | translate}}"></ion-textarea>
+    <ion-button expand="block" type="button" (click)="close()">{{'send' | translate}}</ion-button>
+</ion-content>

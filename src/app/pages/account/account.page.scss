@@ -1,0 +1,85 @@
+ion-content {
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    .top-side {
+        position: relative;
+        img {
+            max-height: 40vh;
+            object-fit: cover;
+            width: 100%;
+        }
+        ion-button {
+            position: absolute;
+            right: 10px;
+            bottom: 45px;
+            z-index: 1;
+            --border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            --background: var(--ion-color-tertiary);
+            --padding-start: 0;
+            --padding-end: 0;
+            ion-icon {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        .contian-image {
+            position: absolute;
+            bottom: 0;
+            padding: 15px;
+            width: 100%;
+            background-color: #29b6f6;
+            p {
+                margin: 0;
+                margin-bottom: 5px;
+                font-size: 1.5rem;
+                color: var(--ion-color-light);
+                max-height: 20px;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            span {
+                font-size: 1rem;
+                color: var(--ion-color-light);
+                max-height: 14px;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+    }
+    form {
+        padding: 15px;
+        .active {
+            ion-item {
+                border-bottom: 1px solid var(--ion-color-primary);
+                --border-width: 0;
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+        ion-item {
+            --padding-start: 0;
+            --padding-end: 0;
+            border-bottom: 1px solid var(--ion-color-medium);
+            --border-width: 0 0 1px 0;
+            ion-icon {
+                width: 18px;
+                height: 18px;
+                color: var(--ion-color-tertiary);
+                margin: 0;
+            }
+            ion-input {
+                font-size: 1.2rem;
+                --padding-start: 20px;
+            }
+            &:last-of-type {
+                border-bottom: 0px !important;
+                --border-width: 0px;
+            }
+        }
+    }
+}

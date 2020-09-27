@@ -1,3 +1,98 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-split-pane>
+        <ion-menu type="overlay" side="start" menuId="leftMenu">
+            <ion-header>
+                <div class="data">
+                    <ion-avatar>
+                        <img src="./assets/img/person.png">
+                    </ion-avatar>
+                    <span>john smith@gmail.com</span>
+                </div>
+            </ion-header>
+            <ion-content forceOverscroll="false">
+                <ion-list>
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages ; let i = index">
+                        <ion-item lines="none" [routerDirection]="'root'" [routerLink]="[p.url]" detail='false' [ngClass]="{'active': i == selected}" (click)="select(i)">
+                            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                            <ion-label>
+                                {{p['title_' + global.lang ]}}
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item class="facebook" lines="none" detail='false'>
+                            <ion-icon slot="start" name="logo-facebook"></ion-icon>
+                            <ion-label>
+                                Follow us on Facebook
+                            </ion-label>
+                        </ion-item>
+                        <ion-item class="twitter" lines="none" detail='false'>
+                            <ion-icon slot="start" name="logo-twitter"></ion-icon>
+                            <ion-label>
+                                Follow us on Twitter
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+
+            <ion-footer>
+                <ion-toolbar (click)="logOut()">
+                    <ion-button fill="clear" type="button" routerDirection="root" routerLink="/sign-in" slot="end">
+                        {{'logOut' | translate}}
+                        <ion-icon slot="end" name="ios-log-in"></ion-icon>
+                    </ion-button>
+                </ion-toolbar>
+            </ion-footer>
+
+        </ion-menu>
+
+        <ion-menu type="overlay" side="end" menuId="rightMenu">
+            <ion-header>
+                <div class="data">
+                    <ion-avatar>
+                        <img src="./assets/img/person.png">
+                    </ion-avatar>
+                    <span>john smith@gmail.com</span>
+                </div>
+            </ion-header>
+            <ion-content forceOverscroll="false">
+                <ion-list>
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+                        <ion-item lines="none" [routerDirection]="'root'" [routerLink]="[p.url]" detail='false' [ngClass]="{'active': i == selected}" (click)="select(i)">
+                            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                            <ion-label>
+                                {{p['title_' + global.lang ]}}
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item class="facebook" lines="none" detail='false'>
+                            <ion-icon slot="start" name="logo-facebook"></ion-icon>
+                            <ion-label>
+                                {{'FollowUsOn' | translate}} Facebook
+                            </ion-label>
+                        </ion-item>
+                        <ion-item class="twitter" lines="none" detail='false'>
+                            <ion-icon slot="start" name="logo-twitter"></ion-icon>
+                            <ion-label>
+                                {{'FollowUsOn' | translate}} Twitter
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+            <ion-footer>
+                <ion-toolbar (click)="logOut()">
+                    <ion-button fill="clear" type="button" routerDirection="root" routerLink="/sign-in" slot="end">
+                        {{'logOut' | translate}}
+                        <ion-icon slot="end" name="ios-log-in"></ion-icon>
+                    </ion-button>
+                </ion-toolbar>
+            </ion-footer>
+        </ion-menu>
+
+
+        <ion-router-outlet main></ion-router-outlet>
+    </ion-split-pane>
 </ion-app>

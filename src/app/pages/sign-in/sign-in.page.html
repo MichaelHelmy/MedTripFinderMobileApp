@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button class="lang_btn" (click)="changeLanguage()">
+                {{'btnText' | translate}}
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="start">
+            <ion-button class="skip" fill="clear" strong="true" routerDirection="root" routerLink="/find-adoctor"> {{'skip' | translate}}</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content forceOverscroll="false">
+
+    <form class="sign" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
+        <!-- email -->
+        <ion-item lines="none">
+            <ion-input type="email" formControlName="email" placeholder="{{'email' | translate}}"></ion-input>
+        </ion-item>
+
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of global.validation_messages.email">
+                <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation['message_' + global.lang] }}
+                </div>
+            </ng-container>
+        </div>
+        <!-- password -->
+        <ion-item lines="none">
+            <ion-input type="password" formControlName="password" placeholder="{{'password' | translate}}"></ion-input>
+        </ion-item>
+
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of global.validation_messages.password">
+                <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    {{ validation['message_' + global.lang] }}
+                </div>
+            </ng-container>
+        </div>
+
+        <ion-button type="button" class="forgetPass" fill="clear" strong="true" (click)="ForgetPassWord()">{{'forgetPassword?' | translate}}</ion-button>
+        <ion-button type="submit" expand="block" strong="true" color="tertiary" [disabled]="!validations_form.valid">{{'login' | translate}}</ion-button>
+        <ion-button type="button" class="createaccount" fill="clear" expand="block" strong="true" routerLink="/sign-up"> {{'noAccountYet?' | translate}}
+            <ion-text color="tertiary"> {{'CreateOne' | translate}}</ion-text>
+        </ion-button>
+    </form>
+    <div class="SignInWith">
+        <ion-buttons>
+            <p>{{'SignInWith' | translate}}</p>
+            <ion-button fill="clear">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear">
+                <ion-icon name="logo-googleplus"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </div>
+</ion-content>

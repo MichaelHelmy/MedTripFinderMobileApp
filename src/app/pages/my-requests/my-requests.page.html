@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            {{'MyRequests' | translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+    <ion-list>
+        <ion-item lines="none" class="container-request" *ngFor="let request of requests">
+            <ion-label>
+                <div class="top-side">
+                    <p>{{request['name_' + global.lang ]}}</p>
+                    <ion-text color="light" [ngClass]="{'wait' : request.case == 'wait' , 'confirm' : request.case == 'confirm' , 'done' : request.case == 'done' }">{{request['btn_' + global.lang ]}}</ion-text>
+                </div>
+                <ion-text color="medium">{{request['title_' + global.lang ]}}</ion-text>
+                <div class="location">
+                    <ion-icon name="pin"></ion-icon>
+                    <span>{{request['address_' + global.lang ]}}</span>
+                </div>
+                <div class="bottom-side">
+                    <span>30/10  <ion-text color="tertiary">{{'from' | translate}} </ion-text> 07:00 Am <ion-text color="tertiary"> {{'to' | translate}}</ion-text> 07:00 Am</span>
+                    <div class="creatAndTrash">
+                        <ion-button fill="clear" routerLink="/details">
+                            <ion-icon name="create"></ion-icon>
+                        </ion-button>
+                        <ion-button fill="clear" (click)="remove(request)">
+                            <ion-icon name="trash"></ion-icon>
+                        </ion-button>
+                    </div>
+                </div>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="empty" *ngIf="requests.length == 0">
+        <ion-text>{{'empty' | translate}}</ion-text>
+        <ion-icon name="sad"></ion-icon>
+    </div>
+
+</ion-content>

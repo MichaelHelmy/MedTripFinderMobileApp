@@ -1,0 +1,15 @@
+ion-header {
+    background-image: none;
+    position: absolute;
+    &::after {
+        height: 0;
+    }
+    ion-toolbar {
+        --background: transparent;
+    }
+}
+
+ion-content {
+    --background: var(--ion-color-blue);
+    --overflow: scroll;
+}

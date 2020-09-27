@@ -1,0 +1,22 @@
+ion-header {
+    background-image: none;
+    position: absolute;
+    &::after {
+        height: 0;
+        background-image: none;
+    }
+    ion-toolbar {
+        --background: transparent;
+        .lang_btn {
+            width: 30px !important;
+            height: 30px !important;
+            background-color: var(--ion-color-primary);
+        }
+    }
+}
+
+ion-content {
+    --background: var(--ion-color-blue);
+    --overflow: scroll;
+    position: relative;
+}

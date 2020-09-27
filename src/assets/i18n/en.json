@@ -1,0 +1,79 @@
+{
+    "email": "Email",
+    "password": "Password",
+    "phone": "Phone",
+    "address": "Address",
+    "forgetPassword?": "Forget Password ?",
+    "skip": "Skip",
+    "login": "Login",
+    "noAccountYet?": "No account yet? Create one",
+    "CreateOne": "Create one",
+    "SignInWith": "Sign In With",
+
+    "fristName": "Frist Name",
+    "lastName": "Last Name",
+    "createAccount": "Create Account",
+
+    "forgetPassword": "Forget Password",
+    "PleaseEnterYourEmailRegisterWithUs": "Please Enter Your Email Register With Us",
+    "send": "Send",
+
+    "verificationCode": "Verification Code",
+    "Pleasetypetheverificationsentto": "Please type the verification sent to",
+    "verify": "Verify",
+    "Ifyoudidn’treceiveacode!": "If you didn’t receive a code! ",
+    "resend": "Resend",
+
+    "resetPassword": "Reset Password",
+    "PleaseenteryourEmail": "Please enter your Email Registered with us",
+    "confirmPassword": "Confirm Password",
+    "save": "Save",
+
+    "FindaDoctor": "Find a Doctor",
+    "Saturday": "Saturday",
+    "BookAppointment": "Book appointment",
+    "comment": "Comment",
+    "RateThisDoctor": "Rate This Doctor",
+
+    "FollowUsOn": "Follow us on",
+
+    "logOut": "LogOut",
+
+    "saved": "Saved",
+
+    "MyRequests": "My Requests",
+    "from": "From",
+    "to": "To",
+
+    "setting": "Settings",
+    "languages": "Languages",
+    "storyTextSize": "Story Text Size",
+    "normal": "Normal",
+    "big": "Big",
+    "application": "Application",
+    "sendNotifacation": "Send Notifacation",
+    "autoSync": "Auto Sync",
+    "vibrateApp": "Vibrate App",
+    "vibrate": "Vibrate",
+    "connectWithFacebook": "Connect With Facebook",
+    "connectWithTwitter": "Connect With Twitter",
+    "ok": "ok",
+    "cancle": "cancle",
+
+    "account": "Account",
+    "empty": "Empty",
+
+    "btnText": "ع",
+    "Notification": "Notification",
+    "search": "Search",
+    "name": "Name",
+    "department": "Department",
+    "location": "Location",
+    "sortBy": "Sort By",
+    "searchNow": "Search Now",
+    "unsave": "Unsave",
+    "remove": "Remove",
+
+    "rateThisDoctor": "Rate This Doctor",
+    "Enteranynoteshere": "Enter any notes here..."
+}

@@ -1,0 +1,37 @@
+export interface DoctorModel
+{
+    DoctorHospitals:object[],
+    AppointmentFeesCurrency:any,
+    DoctorOperations:any,
+    DoctorReviews:any,
+    DoctorSuccessStories :any,
+    DoctorVideos :any,
+    LanguageID:number,
+    SpecialityName:string,
+    doctor:{
+        Active:boolean,
+        Address:string,
+        AppointmentCurrencyID:number,
+        AppointmentFees:number,
+        CV:string,
+        ConsultationAllowanceDays:number,
+        Credit:number,
+        Debit :number,
+        DoctorID:number,
+        DoctorOrder:number,
+        Email:string,
+        ImagePath:string,
+        IsMedicalTourism:boolean,
+        IsTest:boolean,
+        IsVideoConference:boolean,
+        LanguageID:number,
+        MobileNo:string,
+        Name:string,
+        NoOfDays:number,
+        Password:string,
+        Rate :number,
+        SpecialityID:number,
+        StartDateForAppointment :any,
+        Title:string
+    }
+}

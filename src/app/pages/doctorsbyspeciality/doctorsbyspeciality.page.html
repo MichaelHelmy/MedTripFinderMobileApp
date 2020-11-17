@@ -1,0 +1,44 @@
+<ion-content>
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button>
+          </ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          {{'FindaDoctor' | translate}}
+      </ion-title>
+      <ion-buttons slot="end">
+          <ion-button routerLink="/search">
+              <ion-icon name="search" slot="icon-only"></ion-icon>
+          </ion-button>
+          <!-- <ion-toggle class="home_toggle" [(ngModel)]="toggle_var"></ion-toggle> -->
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card *ngFor="let doctor of DoctorBySpecialityList$ | async">
+  <img [src]="doctor.doctor.ImagePath" />
+  <ion-card-header>
+    <ion-card-title>{{ doctor.doctor.Name }}</ion-card-title>
+    <ion-card-subtitle>{{ doctor.doctor.Title }}</ion-card-subtitle>
+    <ion-card-subtitle>{{ doctor.SpecialityName }}</ion-card-subtitle>
+
+  </ion-card-header>
+  <ion-card-content
+    
+  >
+    <div [innerHTML]="doctor.doctor.CV"></div>
+  </ion-card-content>
+  <ion-row >
+    <ion-col>
+      <ion-button expand="full" > {{'booknow' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col>
+      <ion-button expand="full" > {{'more' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+</ion-content>

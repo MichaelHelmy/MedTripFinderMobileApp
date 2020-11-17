@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'sign-in',
+    redirectTo: 'specialities',
     pathMatch: 'full'
   },
   { path: 'sign-in', loadChildren: './pages/sign-in/sign-in.module#SignInPageModule' },
@@ -21,7 +21,11 @@ const routes: Routes = [
   { path: 'my-requests', loadChildren: './pages/my-requests/my-requests.module#MyRequestsPageModule' },
   { path: 'notification', loadChildren: './pages/notification/notification.module#NotificationPageModule' },
   { path: 'rate-doctor-modal', loadChildren: './modals/rate-doctor-modal/rate-doctor-modal.module#RateDoctorModalPageModule' },
-  { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' }
+  { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
+  { path: 'specialities', loadChildren: './pages/specialities/specialities.module#SpecialitiesPageModule' },
+  { path: 'doctorsbyspeciality', loadChildren: './pages/doctorsbyspeciality/doctorsbyspeciality.module#DoctorsbyspecialityPageModule' },
+  { path: 'speciality-detail', loadChildren: './pages/speciality-detail/speciality-detail.module#SpecialityDetailPageModule' }
+  
 ];
 
 @NgModule({

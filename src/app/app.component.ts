@@ -15,7 +15,7 @@ export class AppComponent {
     {
       title_en: 'Home',
       title_ar:'الصفحه الرئيسيه',
-      url: '/find-adoctor',
+      url: '/specialities',
       icon: 'home'
     },
     {

@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuController } from '@ionic/angular';
+import {SpecialityModel} from '../intefaces/speciality.model';
+import { Observable, of } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { DoctorModel } from '../intefaces/doctor.model';
+import { SpecialityDetailModel } from '../intefaces/specialitymodel.model';
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
-  Dir='ltr';
-  lang='en';
+  Dir='rtl';
+  lang='ar';
   private htmlRoot = document.documentElement;
-  constructor(public translate: TranslateService,public menu :MenuController) { }
+  constructor(public translate: TranslateService,public menu :MenuController,private http: HttpClient) { }
 
 
   // change Language
@@ -134,6 +139,27 @@ export class GlobalService {
      } 
  
     }
+
+    GetSpecialities():Observable<Array<SpecialityModel>>
+    {
+      return this.http.get<Array<SpecialityModel>>(
+        "https://www.MedTripFinder.com/api/Form/GetSpecialties"
+      );
+    }
+    
+    GetDoctorsBySpeciality(speialityID:number):Observable<Array<DoctorModel>>
+    {
+      return this.http.get<Array<DoctorModel>>(
+        `https://www.MedTripFinder.com/api/Form/GetDoctorsBySpecialities/${speialityID}`
+      );
+    }
+     GetSpecialityModelByID(speialityID:number):Observable<SpecialityDetailModel>
+    {
+      return  this.http.get<SpecialityDetailModel>(
+        `https://www.MedTripFinder.com/api/Form/GetSpecialityModelByID/${speialityID}`
+      );
+    }
+
 
 }
 

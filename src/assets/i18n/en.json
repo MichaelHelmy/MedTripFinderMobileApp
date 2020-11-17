@@ -17,6 +17,7 @@
     "forgetPassword": "Forget Password",
     "PleaseEnterYourEmailRegisterWithUs": "Please Enter Your Email Register With Us",
     "send": "Send",
+    "SurgicalOperations":"Surgical Operations",
 
     "verificationCode": "Verification Code",
     "Pleasetypetheverificationsentto": "Please type the verification sent to",
@@ -28,7 +29,10 @@
     "PleaseenteryourEmail": "Please enter your Email Registered with us",
     "confirmPassword": "Confirm Password",
     "save": "Save",
-
+    "more":"More",
+    "doctors":"Doctors",
+    "booknow":"Book Now",
+    "readmore":"Read More",
     "FindaDoctor": "Find a Doctor",
     "Saturday": "Saturday",
     "BookAppointment": "Book appointment",

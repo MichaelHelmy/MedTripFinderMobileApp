@@ -17,6 +17,7 @@
     "forgetPassword": "هل نسيت كلمه المرور",
     "PleaseEnterYourEmailRegisterWithUs": "من فضلك أدخل بريدك الإلكتروني سجل معنا",
     "send": "ارسال",
+    "SurgicalOperations":"العمليات الجراحية",
 
     "verificationCode": "شيفرة التأكيد",
     "Pleasetypetheverificationsentto": "الرجاء كتابة التحقق المرسلة إلى",
@@ -28,7 +29,10 @@
     "PleaseenteryourEmail": "الرجاء إدخال بريدك الإلكتروني المسجل معنا",
     "confirmPassword": "تأكيد كلمه المرور",
     "save": "حفظ",
-
+    "more":"المزيد",
+"doctors":"الأطباء",
+"booknow":"أحجز الأن",
+"readmore":"المزيد",
     "FindaDoctor": "اعثر على طبيب",
 
     "Saturday": "السبت",

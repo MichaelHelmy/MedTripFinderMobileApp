@@ -13,7 +13,7 @@ export class FindADoctorPage implements OnInit {
   map: any;
   start = 'chicago, il';
   end = 'chicago, il';
-  toggle_var=false;
+  toggle_var=true;
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
   constructor(public global:GlobalService , private menu: MenuController) { 

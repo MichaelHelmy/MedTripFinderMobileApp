@@ -1,0 +1,71 @@
+
+<ion-content>
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button>
+          </ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          {{'FindaDoctor' | translate}}
+      </ion-title>
+      <ion-buttons slot="end">
+          <ion-button routerLink="/search">
+              <ion-icon name="search" slot="icon-only"></ion-icon>
+          </ion-button>
+          <!-- <ion-toggle class="home_toggle" [(ngModel)]="toggle_var"></ion-toggle> -->
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item-divider>
+  <ion-label>
+    {{'SurgicalOperations' | translate}}
+    
+  </ion-label>
+</ion-item-divider>
+<ion-card *ngFor="let operation of OperationList">
+  <img [src]="`https://www.medtripfinder.com/${operation.ImagePath}`" />
+  <ion-card-header>
+    <ion-card-title>{{ operation.Name }}</ion-card-title>
+    
+
+  </ion-card-header>
+  <ion-row >
+    <ion-col>
+      <ion-button expand="full" > {{'readmore' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+<ion-item-divider>
+  <ion-label>
+    {{'doctors' | translate}}
+  </ion-label>
+</ion-item-divider>
+
+<ion-card *ngFor="let doctor of DoctorList" >
+  <img [src]="doctor.doctor.ImagePath" />
+  <ion-card-header>
+    <ion-card-title>{{ doctor.doctor.Name }}</ion-card-title>
+    <ion-card-subtitle>{{ doctor.doctor.Title }}</ion-card-subtitle>
+    <ion-card-subtitle>{{ doctor.SpecialityName }}</ion-card-subtitle>
+
+  </ion-card-header>
+  <ion-card-content
+    
+  >
+    <div [innerHTML]="doctor.doctor.CV"></div>
+  </ion-card-content>
+  <ion-row >
+    <ion-col>
+      <ion-button expand="full" > {{'booknow' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+    <ion-col>
+      <ion-button expand="full" > {{'more' | translate}}</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+</ion-content>
